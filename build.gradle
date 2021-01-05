@@ -1,0 +1,20 @@
+group 'aws.test'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'sample.gradle.AmazonSESSample'
+
+
+sourceCompatibility = 1.8
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  implementation platform('com.amazonaws:aws-java-sdk-bom:1.11.930')
+  implementation 'com.amazonaws:aws-java-sdk-ses'
+  testCompile group: 'junit', name: 'junit', version: '4.11'
+}
